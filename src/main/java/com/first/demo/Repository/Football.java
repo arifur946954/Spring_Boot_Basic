@@ -2,15 +2,12 @@ package com.first.demo.Repository;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
-import com.first.demo.Repository.Coach;
 
 @Component
-
-public class CricketCoach implements Coach {
+@Primary
+public class Football implements Coach{
     @Override
     public String cricket() {
-        return "we are cricket player";
+        return "I am a football player";
     }
-
-
 }
