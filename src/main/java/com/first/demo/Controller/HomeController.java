@@ -1,11 +1,16 @@
 package com.first.demo.Controller;
 
+import com.first.demo.Repository.Coach;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HomeController {
+    @Autowired
+    private Coach myCoach;
+
 
     @Value("${coach.name}")
     private  String CoachName;
@@ -24,7 +29,7 @@ public class HomeController {
     }
     @GetMapping("/home")
     public String hello(){
-    return  "welcome to my new web sda pages";
+    return  "welcome to my new web sda pages hello";
     }
 
 
@@ -32,5 +37,19 @@ public class HomeController {
     public String about(){
         return  "welcome to my new web sda pages";
     }
+@GetMapping("/cricket")
+public String cricket(){
+        return myCoach.cricket();
+
 }
+
+    @GetMapping("/football")
+    public String football(){
+        return myCoach.football();
+
+    }
+
+}
+
+
 
