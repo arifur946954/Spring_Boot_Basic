@@ -13,6 +13,8 @@ public class HomeController {
     private Coach myCoach;
     @Autowired
     public void setCoach(@Qualifier ("football") Coach theCoach){
+        System.out.println("hi this is arif"+getClass().getSimpleName());
+
         myCoach=theCoach;
     }
 
